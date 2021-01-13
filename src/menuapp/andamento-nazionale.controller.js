@@ -15,7 +15,7 @@ function AndamentoNazionaleController(items) {
 	//console.log("andamento.items[0].data: ",andamento.items[0].data);
 	andamento.gdata = [];
 	 andamento.gitems = [].concat(andamento.items).reverse();
-	 console.log(andamento.gitems);
+	 //console.log(andamento.gitems);
 	 andamento.glabel = [];
 	 andamento.gdatatot = [];
 	 andamento.gdatanew = [];			 

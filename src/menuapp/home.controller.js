@@ -4,14 +4,15 @@
 angular.module('MenuApp')
 .controller('HomeController', HomeController);
 
-HomeController.$inject = ['items','latest'];
-function HomeController(items, latest) {
+HomeController.$inject = ['items','latest', 'tk'];
+function HomeController(items, latest, tk) {
     var home = this;
 
     home.items = []; 
     home.items = items;
     home.latest = {};
     home.latest = latest[0];
+    home.tk = tk;
     
     home.giorno = home.latest.data.slice(8,10);
     home.mese = home.latest.data.slice(5,7);
@@ -211,7 +212,7 @@ function HomeController(items, latest) {
   map.addLayer(l2);
   L.control.layers(null, overlayMaps, {collapsed: false}).addTo(map);
 
-  var key = 'pk.eyJ1Ijoia2hyaW1zb24iLCJhIjoiY2tqb2NjcDk3MWVuODJ6bWowM3p3dWVyYiJ9.-mQDMHqr4oTxb93esPdmKA';
+ 
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -219,7 +220,7 @@ function HomeController(items, latest) {
     id: 'mapbox/light-v9',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: key
+    accessToken: home.tk
     }).addTo(map);
 
 

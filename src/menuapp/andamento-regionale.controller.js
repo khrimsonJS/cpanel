@@ -12,12 +12,12 @@ function AndamentoRegionaleController(items) {
 	regionale.items = []; 
    	regionale.items = items;
    	regionale.denominazione_regione = items[0].denominazione_regione;
-   	console.log("items[0]: ",regionale.items[0]);
-	console.log("regionale.items[0].data: ",regionale.items[0].data);
+   	//console.log("items[0]: ",regionale.items[0]);
+	//console.log("regionale.items[0].data: ",regionale.items[0].data);
 
 
 	regionale.gitems = [].concat(regionale.items).reverse();
-	 console.log(regionale.gitems);
+	 //console.log(regionale.gitems);
 	 regionale.glabel = [];
 	 regionale.gdatatot = [];
 	 regionale.gdatanew = [];			 

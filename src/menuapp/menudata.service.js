@@ -172,7 +172,7 @@ return $http({
                     regioniData.features[j].properties.totale_positivi = response.data[i].totale_positivi;
               }
             }
-          console.log("postjoin:",regioniData);
+          //console.log("postjoin:",regioniData);
           }
             return regioniData;
         })
@@ -181,6 +181,10 @@ return $http({
         })
   }
 
+  service.getTk = function() {
+      var tk = 'pk.eyJ1Ijoia2hyaW1zb24iLCJhIjoiY2tqb2NjcDk3MWVuODJ6bWowM3p3dWVyYiJ9.-mQDMHqr4oTxb93esPdmKA';
+      return tk;
+  }
 
 
 //-----------------------------------//

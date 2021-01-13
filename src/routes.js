@@ -23,9 +23,11 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         return MenuDataService.getRegioniLatest();
       }],
       latest: ['MenuDataService', function (MenuDataService) {
-        //console.log('latest:', MenuDataService.getRegioniLatest());
         return MenuDataService.getNazionaleLatest();
-      }] 
+      }],
+      tk: ['MenuDataService', function (MenuDataService) {
+        return MenuDataService.getTk();
+      }]   
     }
   })
  
@@ -36,7 +38,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'AndamentoNazionaleController as andamento',
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
-       // console.log(MenuDataService.getAllCategories());
         return MenuDataService.getAndamentoNazionale();
       }]
     }
@@ -49,8 +50,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'FotografiaController as fotografia',
     resolve: {
       items: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams) {
-        console.log(MenuDataService.getAndamentoNazionaleData($stateParams.data));
-        // return MenuDataService.getItemsForCategory($stateParams.data);
         return MenuDataService.getAndamentoNazionaleData($stateParams.data);
       }]
     }
@@ -76,11 +75,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'AndamentoRegionaleController as regionale',
     resolve: {
       items: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams) {
-        console.log(MenuDataService.getAndamentoRegionaleRegione($stateParams.regione));
         return MenuDataService.getAndamentoRegionaleRegione($stateParams.regione);
       }],
       regione: ['$stateParams', function ($stateParams) {
-        console.log("params:",$stateParams.regione)
         return $stateParams.regione;
     }]
     }
@@ -97,7 +94,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         return MenuDataService.getAndamentoRegionaleRegioneData($stateParams.regione, $stateParams.data );
       }],
       regione: ['$stateParams', function ($stateParams) {
-        console.log("params:",$stateParams.regione)
         return $stateParams.regione;
     }]
     }
