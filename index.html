@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/leaflet.css"/>
+    <link rel="stylesheet" href="css/leaflet.groupedlayercontrol.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="lib/leaflet.js"></script>
+    <script src="lib/leaflet.groupedlayercontrol.js"></script>
+    <script type="text/javascript" src="js/regioni.geojson"></script>
+    <title>Pannello informazioni positivi COVID-19</title>
+  </head>
+  <body>
+    <h2>Pannello informazioni positivi COVID-19</h2>
+    
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp/menuapp.module.js"></script>
+    <script src="src/menuapp/data.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'MenuApp' module artifacts -->
+    <script src="src/menuapp/home.controller.js"></script>
+    <script src="src/menuapp/andamento-nazionale.controller.js"></script>
+    <script src="src/menuapp/andamento-regionale.controller.js"></script>
+    <script src="src/menuapp/lista-regioni.controller.js"></script>
+    <script src="src/menuapp/fotografia.controller.js"></script>
+    <script src="src/menuapp/fotografia-reg.controller.js"></script>
+    <script src="src/menuapp/menudata.service.js"></script>
+  </body>
+</html>

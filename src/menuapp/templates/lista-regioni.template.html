@@ -1,0 +1,9 @@
+<a ui-sref="home">Home</a> &lt; <span>Lista Regioni</span> 
+<h3>Lista Regioni</h3>
+<!-- <categories-list items="categories.items"></categories-list> -->
+<ul>
+
+  <li ng-repeat="item in listareg.items">
+    <a ui-sref="andamento-regionale({regione: item})">{{item}}</a>
+  </li>
+</ul>

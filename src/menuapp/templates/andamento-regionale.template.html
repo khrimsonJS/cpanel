@@ -1,0 +1,12 @@
+<a ui-sref="home">Home</a> &lt; <a ui-sref="lista-regioni">Lista Regioni</a> &lt; <span>Andamento Regionale - Regione {{ regionale.denominazione_regione }}</span>
+
+<div><canvas id="myChart" width="600" height="200"></canvas></div>
+
+
+<h3>Lista flussi regionali {{ regionale.denominazione_regione }} </h3>
+<!-- <categories-list items="categories.items"></categories-list> -->
+<ul>
+  <li ng-repeat="item in regionale.items">
+    <a ui-sref="fotografia-reg({regione: item.denominazione_regione, data: item.data})">{{ item.data }}</a>
+  </li>
+</ul>

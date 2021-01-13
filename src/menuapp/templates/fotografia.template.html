@@ -1,0 +1,24 @@
+<a ui-sref="home">Home</a> &lt; <a ui-sref="andamento-nazionale">Andamento Nazionale</a> &lt; <span>Fotografia Dataset</span> 
+
+<h3>Fotografia dataset al {{ fotografia.datatrunc }}</h3> 
+
+
+<!-- 
+<div>Item name: {{ fotografia.data }}</div>
+<div>Item quantity: {{ fotografia.nuovi_positivi }}</div>
+<div>Item description: {{ fotografia.totale_casi }}</div>
+
+ <menu-items-list items="menuitems.items"></menu-items-list> --> 
+
+<ul>
+  <li>
+    Data: {{ fotografia.items.data }}</a>
+  </li>
+  <li>
+    Nuovi positivi: {{ fotografia.items.nuovi_positivi }}
+  </li>
+  <li>
+    Totale casi: {{ fotografia.items.totale_casi }}
+  </li>
+</ul> 
+

@@ -1,0 +1,15 @@
+<a ui-sref="home">Home</a> &lt; <span>Andamento Nazionale</span> 
+
+<div><canvas id="myChart" width="600" height="200"></canvas></div>
+
+
+
+
+
+<h3>Lista flussi nazionali</h3>
+<!-- <categories-list items="categories.items"></categories-list> -->
+<ul>
+  <li ng-repeat="item in andamento.items">
+    <a ui-sref="fotografia({data: item.data})">{{ item.data }}</a>
+  </li>
+</ul>
