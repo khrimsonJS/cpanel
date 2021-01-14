@@ -58,10 +58,20 @@ var chart = new Chart(ctx, {
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        layout: {
+            padding: {
+                left: 10,
+                right: 20,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
 });
 
 
 }
 
 })();
+

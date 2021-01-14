@@ -7,20 +7,22 @@ body {
  	height: 400px; 
  	width: 500px;
  	margin: 10px 30px 10px 30px;
- 	border: 1px solid black;
+ 	border: 1px solid grey;
+   /* box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 10px 10px 0 rgba(0,0,0,0.19);*/
 }
 
 #riepilogo {
     height: 340px; 
     width: 220px;
-    padding: 30px 70px 30px 10px;
+    padding: 50px 40px 10px 30px;
     margin: 0px 30px 0px 30px;
-    border: 1px solid black;
-    float: left;    
+    border: 1px solid grey;
+    float: left;
+    /*box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 10px 10px 0 rgba(0,0,0,0.19);*/    
 }
 
 #tastonaz {
-    margin: 0px 30px 0px 30px;
+    margin: 0px 50px 0px 30px;
     width: 220px;
     /*border: 1px solid black;*/
     float: left;    
@@ -28,15 +30,19 @@ body {
 
 #tastoreg {
     margin: 0px 30px 0px 30px;
-    margin-left: 360px;
+    margin-left: 350px;
+    z-index: 1000;
     /*border: 1px solid black;    */
 }
 
 #myChart {
   margin-top: 20px;
-  margin-left: auto - 20px;
-  margin-right: auto - 20px;
-  border: 1px solid black;  
+  /*border: 1px solid black;  */
+}
+
+#datonaz {
+    padding: 0px 0px 0px 30px;ù
+    color: red;
 }
 
 .info {
@@ -63,3 +69,4 @@ body {
     margin-right: 8px;
     opacity: 0.7;
 }
+

@@ -52,7 +52,16 @@ function AndamentoRegionaleController(items) {
 	    },
 
 	    // Configuration options go here
-	    options: {}
+	    options: {
+        layout: {
+            padding: {
+                left: 10,
+                right: 20,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
 	});
 
 //console.log('data', regionale.gdata);
