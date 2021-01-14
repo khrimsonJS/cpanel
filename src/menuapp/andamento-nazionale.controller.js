@@ -21,7 +21,7 @@ function AndamentoNazionaleController(items) {
 	 andamento.gdatanew = [];			 
 	for (var i=0;i<andamento.gitems.length;i++) {
 		// if (andamento.gitems[i].data.slice(8,10) === '01') {
-			andamento.glabel.push(andamento.gitems[i].data.slice(5,7).concat(' / ',andamento.gitems[i].data.slice(0,4)));
+			andamento.glabel.push(andamento.gitems[i].data.slice(8,10).concat('/',andamento.gitems[i].data.slice(5,7),'/',andamento.gitems[i].data.slice(0,4)));
 			andamento.gdatatot.push(andamento.gitems[i].totale_positivi);
 			andamento.gdatanew.push(andamento.gitems[i].nuovi_positivi);
 

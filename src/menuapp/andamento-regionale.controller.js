@@ -22,7 +22,7 @@ function AndamentoRegionaleController(items) {
 	 regionale.gdatatot = [];
 	 regionale.gdatanew = [];			 
 	for (var i=0;i<regionale.gitems.length;i++) {
-			regionale.glabel.push(regionale.gitems[i].data.slice(5,7).concat(' / ',regionale.gitems[i].data.slice(0,4)));
+			regionale.glabel.push(regionale.gitems[i].data.slice(8,10).concat('/',regionale.gitems[i].data.slice(5,7),'/',regionale.gitems[i].data.slice(0,4)));
 			regionale.gdatatot.push(regionale.gitems[i].totale_positivi);
 			regionale.gdatanew.push(regionale.gitems[i].nuovi_positivi);		
 	}
