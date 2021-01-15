@@ -93,14 +93,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-
-// //Item Detail
-//   .state('categories.menu-items.item-detail', {
-//     url: '/menu-items/{catId}',
-//     templateUrl: 'src/menuapp/templates/item-detail.template.html',
-//     controller: "itemDetailController as itemdetail"
-//   });
-
- }
+}  // close routesconfig
 
 })();

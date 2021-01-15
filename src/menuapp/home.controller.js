@@ -28,7 +28,7 @@ function HomeController(items, latest, tk) {
            d > 100   ? '#FD8D3C' :
            d > 50    ? '#FEB24C' :
            d > 10    ? '#FED976' :
-                      '#FFEDA0';
+                       '#FFEDA0';
     }
 
   function getColor2(d) {

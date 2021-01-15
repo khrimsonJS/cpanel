@@ -4,7 +4,6 @@
 angular.module("data")
 .service("MenuDataService", MenuDataService);
 
-
 MenuDataService.$inject = ["$http"]
 function MenuDataService($http) {
  var service = this;

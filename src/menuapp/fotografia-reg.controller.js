@@ -4,7 +4,6 @@
 angular.module('MenuApp')
 .controller('FotografiaRegController', FotografiaRegController);
 
-
 FotografiaRegController.$inject = ['items'];
 function FotografiaRegController(items) {
   var fotografiareg = this;
