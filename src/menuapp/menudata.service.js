@@ -5,8 +5,8 @@ angular.module("data")
 .service("MenuDataService", MenuDataService);
 
 
-MenuDataService.$inject = ["$http", "$q", "$timeout"]
-function MenuDataService($http, $q, $timeout) {
+MenuDataService.$inject = ["$http"]
+function MenuDataService($http) {
  var service = this;
 
 service.getAndamentoNazionale = function () {
@@ -53,29 +53,6 @@ return $http({
 
   }  
 
-
-  // service.getAndamentoNazionaleData = function (data) {
-  // return $http({
-  //       method: "GET",
-  //       url: ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json")
-  //     }).then(function (response) {
-  //       var andamentoNazionaleData = {};
-  //       for (var i=0;i<response.data.length;i++) {
-  //         if (response.data[i].data === data) {
-
-  //         andamentoNazionaleData = response.data[i];
-  //         }
-  //       }
-  //         //console.log(andamentoNazionaleData.length);
-  //         //console.log(andamentoNazionaleData);
-  //         return andamentoNazionaleData;
-  //     })
-  //      .catch(function (error) {
-  //         console.log(error);
-  //     })
-
-  // }  
-
 service.getAndamentoRegionaleRegione = function (regione) {
 return $http({
         method: "GET",
@@ -92,7 +69,6 @@ return $http({
               }
             }
         }
-
             andamentoRegionaleRegione.reverse();
             return andamentoRegionaleRegione;
       })
@@ -111,11 +87,9 @@ return $http({
           for (var i=0;i<response.data.length;i++) {
               for (var j=0;j<regionipop.length;j++) {
                 if ((response.data[i].denominazione_regione === regione) && (response.data[i].data === data) && (regionipop[j].Territorio === regione)) {
-                //console.log("regione+data: ",response.data[i].denominazione_regione, ' - ', response.data[i].data )
                   response.data[i].popolaz = regionipop[j].popolaz;
                   response.data[i].incidenza = parseFloat((response.data[i].nuovi_positivi*100/response.data[i].popolaz).toPrecision(3));
                   response.data[i].prevalenza = parseFloat((response.data[i].totale_positivi*100/response.data[i].popolaz).toPrecision(3)); 
-                  //andamentoRegionaleRegioneData.push(response.data[i]);
                   andamentoRegionaleRegioneData = response.data[i];
                 }
               }
@@ -127,76 +101,6 @@ return $http({
         })
 
   }   
-// service.getAndamentoRegionaleRegione = function (regione) {
-// return $http({
-//         method: "GET",
-//         url: ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json")
-//       }).then(function (response) {
-//         var andamentoRegionaleRegione = [];
-//         for (var i=0;i<response.data.length;i++) {
-//           if (response.data[i].denominazione_regione === regione) {
-//           andamentoRegionaleRegione.push(response.data[i]);
-//           }
-//         }
-//            andamentoRegionaleRegione.reverse();
-//           //console.log(andamentoRegionaleRegione.length);
-//           //console.log(andamentoRegionaleRegione);
-//           return andamentoRegionaleRegione;
-//       })
-//        .catch(function (error) {
-//           console.log(error);
-//       })
-
-//   }
-
-  // service.getAndamentoRegionaleRegioneData = function (regione, data) {  
-  // return $http({
-  //         method: "GET",
-  //         url: ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json")
-  //       }).then(function (response) {
-  //         var andamentoRegionaleRegioneData = [];
-  //         for (var i=0;i<response.data.length;i++) {
-  //           if ((response.data[i].denominazione_regione === regione) && (response.data[i].data === data)) {
-  //           //console.log("regione+data: ",response.data[i].denominazione_regione, ' - ', response.data[i].data )
-  //           andamentoRegionaleRegioneData = response.data[i];
-  //           }
-  //         }
-  //           //console.log(andamentoRegionaleRegioneData.length);
-  //           //console.log("andamentoRegionaleRegioneData: ",andamentoRegionaleRegioneData);
-  //           return andamentoRegionaleRegioneData;
-  //       })
-  //        .catch(function (error) {
-  //           console.log(error);
-  //       })
-
-  // }    
-
-  service.getRegioni = function () {
-    var regioni = [
-      "Abruzzo",
-      "Basilicata",
-      "Calabria",
-      "Campania",
-      "Emilia-Romagna",
-      "Friuli Venezia Giulia",
-      "Lazio",
-      "Liguria",
-      "Lombardia",
-      "Marche",
-      "Molise",
-      "P.A. Bolzano",
-      "P.A. Trento",
-      "Piemonte",
-      "Puglia",
-      "Sardegna",
-      "Sicilia",
-      "Toscana",
-      "Umbria",
-      "Valle d'Aosta",
-      "Veneto"];
-      return regioni;
-  }
-
 
   service.getNazionaleLatest = function () {
   return $http({
@@ -234,7 +138,6 @@ return $http({
 
               }
             }
-          //console.log("postjoin:",regioniData);
           }
             return regioniData;
         })
@@ -248,37 +151,31 @@ return $http({
       return tk;
   }
 
-
-//-----------------------------------//
-
-service.getObj = function () {
-
-objlist = [];
-obj1 = {
-  name: "firstname",
-  short_name: "F"
-};
-obj2 = {
-  name: "Secondname",
-  short_name: "S"
-};
-
-objlist.push(obj1);
-objlist.push(obj2);
-console.log(objlist);
-
-var deferred = $q.defer();
-
-    // Wait 2 seconds before returning
-    $timeout(function () {
-      // deferred.reject(items);
-      deferred.resolve(objlist);
-    }, 800);
-
-console.log(deferred.promise)
-return deferred.promise;
-
-}
+  service.getRegioni = function () {
+    var regioni = [
+      "Abruzzo",
+      "Basilicata",
+      "Calabria",
+      "Campania",
+      "Emilia-Romagna",
+      "Friuli Venezia Giulia",
+      "Lazio",
+      "Liguria",
+      "Lombardia",
+      "Marche",
+      "Molise",
+      "P.A. Bolzano",
+      "P.A. Trento",
+      "Piemonte",
+      "Puglia",
+      "Sardegna",
+      "Sicilia",
+      "Toscana",
+      "Umbria",
+      "Valle d'Aosta",
+      "Veneto"];
+      return regioni;
+  }
 
 } //close service
 

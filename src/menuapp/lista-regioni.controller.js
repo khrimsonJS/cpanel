@@ -10,9 +10,6 @@ function ListaRegioni(items) {
   	var listareg = this;
 	listareg.items = []; 
    	listareg.items = items;
-   	//console.log("items[0]: ",listareg.items[0]);
-	//console.log("listareg.items[0].data): ",listareg.items[0].data);
-
 }
 
 })();

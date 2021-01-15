@@ -11,33 +11,21 @@ function AndamentoNazionaleController(items) {
 	
 	andamento.items = []; 
    	andamento.items = items;
-   	//console.log("items[0]: ",andamento.items[0]);
-	//console.log("andamento.items[0].data: ",andamento.items[0].data);
 	andamento.gdata = [];
-	 andamento.gitems = [].concat(andamento.items).reverse();
-	 //console.log(andamento.gitems);
-	 andamento.glabel = [];
-	 andamento.gdatatot = [];
-	 andamento.gdatanew = [];
-     andamento.gdatainc = [];
-     andamento.gdataprev = [];
+	andamento.gitems = [].concat(andamento.items).reverse();
+	andamento.glabel = [];
+	andamento.gdatatot = [];
+	andamento.gdatanew = [];
+    andamento.gdatainc = [];
+    andamento.gdataprev = [];
 
 	for (var i=0;i<andamento.gitems.length;i++) {
-		// if (andamento.gitems[i].data.slice(8,10) === '01') {
 			andamento.glabel.push(andamento.gitems[i].data.slice(8,10).concat('/',andamento.gitems[i].data.slice(5,7),'/',andamento.gitems[i].data.slice(0,4)));
 			andamento.gdatatot.push(andamento.gitems[i].totale_positivi);
 			andamento.gdatanew.push(andamento.gitems[i].nuovi_positivi);
             andamento.gdatainc.push(andamento.gitems[i].incidenza);
             andamento.gdataprev.push(andamento.gitems[i].prevalenza);
-
-			//console.log('andamento.gitems[i].data.slice(8,10): ',andamento.gitems[i].data.slice(8,10),'andamento.gitems[i].data.slice(5,7): ',andamento.gitems[i].data.slice(5,7))
-
-		// }
-		
 	}
-    console.log(andamento.gitems);
-
-//console.log('data', andamento.gdata);
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {

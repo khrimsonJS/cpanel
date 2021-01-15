@@ -20,15 +20,6 @@ function HomeController(items, latest, tk) {
     home.datatrunc = home.giorno.concat('/',home.mese,'/', home.anno);
     home.latest.popolaz = 59641488;
 
-    // home.latest.incidenza = (home.latest.nuovi_positivi*100/59641488).toPrecision(3);
-    // home.latest.prevalenza = (home.latest.totale_positivi*100/59641488).toPrecision(3);
-    //console.log("items.properties.incidenza[0]: ",regioniData.properties.features[0]);
-     //console.log("items.properties.incidenza[0]: ",regioniData.features[0]);
-    //console.log('home.latest:', home.latest);
-    
-    //console.log("items[0]: ",home.items);
-    //console.log("home.items[0].data): ",home.items[0].data);
-
   function getColor(d) {
     return d > 2000  ? '#800026' :
            d > 1000  ? '#BD0026' :
@@ -372,8 +363,6 @@ function HomeController(items, latest, tk) {
   //L.geoJson(home.items).addTo(map);
 
 
-
-
   //add Default layer, its control, its legend and layer control
     map.addControl(info2);
     map.addControl(totaliLegend);
@@ -390,10 +379,6 @@ function HomeController(items, latest, tk) {
     zoomOffset: -1,
     accessToken: home.tk
     }).addTo(map);
-
-
-
-
 
     map.on('overlayadd', function (eventLayer) {
     if (eventLayer.name === 'Nuovi Positivi') {

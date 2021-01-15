@@ -11,19 +11,14 @@ function AndamentoRegionaleController(items) {
 	
 	regionale.items = []; 
    	regionale.items = items;
-   	//regionale.denominazione_regione = items[0].denominazione_regione;
-   	//console.log("items[0]: ",regionale.items[0]);
-	//console.log("regionale.items[0].data: ",regionale.items[0].data);
-
 
 	regionale.gitems = [].concat(regionale.items).reverse();
-	 //console.log(regionale.gitems);
-	 regionale.glabel = [];
-	 regionale.gdatatot = [];
-	 regionale.gdatanew = [];
-	 regionale.gdatainc = [];
-	 regionale.gdataprev = [];
-	 regionale.gdataincmol = [];				 
+	regionale.glabel = [];
+	regionale.gdatatot = [];
+	regionale.gdatanew = [];
+	regionale.gdatainc = [];
+	regionale.gdataprev = [];
+	regionale.gdataincmol = [];				 
 	for (var i=0;i<regionale.gitems.length;i++) {
 			regionale.glabel.push(regionale.gitems[i].data.slice(8,10).concat('/',regionale.gitems[i].data.slice(5,7),'/',regionale.gitems[i].data.slice(0,4)));
 			regionale.gdatatot.push(regionale.gitems[i].totale_positivi);
@@ -108,8 +103,6 @@ var ctx2 = document.getElementById('myChart2').getContext('2d');
         }
     }
 	});
-//console.log('data', regionale.gdata);
-
 
 } //close controller
 

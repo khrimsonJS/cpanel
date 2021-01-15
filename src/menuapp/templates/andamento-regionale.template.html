@@ -8,9 +8,7 @@
 	<div><canvas id="myChart2" width="600" height="200"></canvas></div>
 </div>
 
-
 <h4>Lista flussi regionali {{ regionale.denominazione_regione }} </h4>
-<!-- <categories-list items="categories.items"></categories-list> -->
 <ul>
   <li ng-repeat="item in regionale.items">
     <a ui-sref="fotografia-reg({regione: item.denominazione_regione, data: item.data})">{{ item.data }}</a>

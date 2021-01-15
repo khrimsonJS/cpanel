@@ -14,12 +14,6 @@ function FotografiaRegController(items) {
   fotografiareg.mese = fotografiareg.items.data.slice(5,7);
   fotografiareg.anno = fotografiareg.items.data.slice(0,4);
   fotografiareg.datatrunc = 	fotografiareg.giorno.concat('/',fotografiareg.mese,'/', fotografiareg.anno);
-  fotografiareg.popolaz = 59641488;
-  	// console.log("fotografiareg.regione: ", fotografiareg.regione);
-  	// console.log("items: ", items);
-  	// console.log("fotografiareg.items: ",fotografiareg.items);
-  	// console.log("substr: ",fotografiareg.datatrunc);
-    //console.log(fotografiareg.items)
 }
 
 })();

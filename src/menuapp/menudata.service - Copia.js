@@ -9,25 +9,25 @@ MenuDataService.$inject = ["$http", "$q", "$timeout"]
 function MenuDataService($http, $q, $timeout) {
  var service = this;
 
-service.getAndamentoNazionale = function () {
-return $http({
-        method: "GET",
-        url: ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json")
-      }).then(function (response) {
-        var andamentoNazionale = [];
-        for (var i=0;i<response.data.length;i++) {
-          andamentoNazionale.push(response.data[i]);
-        }
-          //console.log(andamentoNazionale.length);
-          //console.log(andamentoNazionale);
-          andamentoNazionale.reverse();
-          return andamentoNazionale;
-      })
-       .catch(function (error) {
-          console.log(error);
-      })
+// service.getAndamentoNazionale = function () {
+// return $http({
+//         method: "GET",
+//         url: ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json")
+//       }).then(function (response) {
+//         var andamentoNazionale = [];
+//         for (var i=0;i<response.data.length;i++) {
+//           andamentoNazionale.push(response.data[i]);
+//         }
+//           //console.log(andamentoNazionale.length);
+//           //console.log(andamentoNazionale);
+//           andamentoNazionale.reverse();
+//           return andamentoNazionale;
+//       })
+//        .catch(function (error) {
+//           console.log(error);
+//       })
 
-  }
+//   }
 
   service.getAndamentoNazionaleData = function (data) {
   return $http({
@@ -37,6 +37,9 @@ return $http({
         var andamentoNazionaleData = {};
         for (var i=0;i<response.data.length;i++) {
           if (response.data[i].data === data) {
+          nazionaleLatest[0].incidenza = (nazionaleLatest[0].nuovi_positivi*100/59641488).toPrecision(3);
+          nazionaleLatest[0].prevalenza = (nazionaleLatest[0].totale_positivi*100/59641488).toPrecision(3); 
+
           andamentoNazionaleData = response.data[i];
           }
         }
@@ -79,7 +82,7 @@ return $http({
         }).then(function (response) {
           var andamentoRegionaleRegioneData = [];
           for (var i=0;i<response.data.length;i++) {
-            if ((response.data[i].denominazione_regione === regione) &&(response.data[i].data === data)) {
+            if ((response.data[i].denominazione_regione === regione) && (response.data[i].data === data)) {
             //console.log("regione+data: ",response.data[i].denominazione_regione, ' - ', response.data[i].data )
             andamentoRegionaleRegioneData = response.data[i];
             }
@@ -118,116 +121,6 @@ return $http({
       "Valle d'Aosta",
       "Veneto"];
       return regioni;
-  }
-
-  service.getRegioniPop = function () {
-    var regionipop = [
-  {
-    "Territorio": "Abruzzo",
-    "Codice_reg": 13,
-    "Value": 1293941
-  },
-  {
-    "Territorio": "Basilicata",
-    "Codice_reg": 17,
-    "Value": 553254
-  },
-  {
-    "Territorio": "Calabria",
-    "Codice_reg": 18,
-    "Value": 1894110
-  },
-  {
-    "Territorio": "Campania",
-    "Codice_reg": 15,
-    "Value": 5712143
-  },
-  {
-    "Territorio": "Emilia-Romagna",
-    "Codice_reg": 8,
-    "Value": 4464119
-  },
-  {
-    "Territorio": "Friuli Venezia Giulia",
-    "Codice_reg": 6,
-    "Value": 1206216
-  },
-  {
-    "Territorio": "Lazio",
-    "Codice_reg": 12,
-    "Value": 5755700
-  },
-  {
-    "Territorio": "Liguria",
-    "Codice_reg": 7,
-    "Value": 1524826
-  },
-  {
-    "Territorio": "Lombardia",
-    "Codice_reg": 3,
-    "Value": 10027602
-  },
-  {
-    "Territorio": "Marche",
-    "Codice_reg": 11,
-    "Value": 1512672
-  },
-  {
-    "Territorio": "Molise",
-    "Codice_reg": 14,
-    "Value": 300516
-  },
-  {
-    "Territorio": "Piemonte",
-    "Codice_reg": 1,
-    "Value": 4311217
-  },
-  {
-    "P.A. Bolzano",
-    "Codice_reg": 21,
-    "Value": 532644
-  },
-  {
-    "P.A. Trento",
-    "Codice_reg": 22,
-    "Value": 545425
-  },
-  {
-    "Territorio": "Puglia",
-    "Codice_reg": 16,
-    "Value": 3953305
-  },
-  {
-    "Territorio": "Sardegna",
-    "Codice_reg": 20,
-    "Value": 1611621
-  },
-  {
-    "Territorio": "Sicilia",
-    "Codice_reg": 19,
-    "Value": 4875290
-  },
-  {
-    "Territorio": "Toscana",
-    "Codice_reg": 9,
-    "Value": 3692555
-  },
-  {
-    "Territorio": "Umbria",
-    "Codice_reg": 10,
-    "Value": 870165
-  },
-  {
-    "Territorio": "Valle d'Aosta",
-    "Codice_reg": 2,
-    "Value": 125034
-  },
-  {
-    "Territorio": "Veneto",
-    "Codice_reg": 5,
-    "Value": 4879133
-  }
-]
   }
 
   service.getNazionaleLatest = function () {
