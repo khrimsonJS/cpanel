@@ -18,18 +18,24 @@ function AndamentoNazionaleController(items) {
 	 //console.log(andamento.gitems);
 	 andamento.glabel = [];
 	 andamento.gdatatot = [];
-	 andamento.gdatanew = [];			 
+	 andamento.gdatanew = [];
+     andamento.gdatainc = [];
+     andamento.gdataprev = [];
+
 	for (var i=0;i<andamento.gitems.length;i++) {
 		// if (andamento.gitems[i].data.slice(8,10) === '01') {
 			andamento.glabel.push(andamento.gitems[i].data.slice(8,10).concat('/',andamento.gitems[i].data.slice(5,7),'/',andamento.gitems[i].data.slice(0,4)));
 			andamento.gdatatot.push(andamento.gitems[i].totale_positivi);
 			andamento.gdatanew.push(andamento.gitems[i].nuovi_positivi);
+            andamento.gdatainc.push(andamento.gitems[i].incidenza);
+            andamento.gdataprev.push(andamento.gitems[i].prevalenza);
 
 			//console.log('andamento.gitems[i].data.slice(8,10): ',andamento.gitems[i].data.slice(8,10),'andamento.gitems[i].data.slice(5,7): ',andamento.gitems[i].data.slice(5,7))
 
 		// }
 		
 	}
+    console.log(andamento.gitems);
 
 //console.log('data', andamento.gdata);
 
@@ -70,8 +76,45 @@ var chart = new Chart(ctx, {
     }
 });
 
+var ctx2 = document.getElementById('myChart2').getContext('2d');
+var chart2 = new Chart(ctx2, {
+    // The type of chart we want to create
+    type: 'bar',
 
-}
+    // The data for our dataset
+    data: {
+        labels: andamento.glabel,
+        datasets: [{
+            label: 'Prevalenza',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: andamento.gdatainc
+        },
+        {
+            label: 'Incidenza',
+            backgroundColor: 'rgb(0, 255, 132)',
+            borderColor: 'rgb(0, 255, 132)',
+            data: andamento.gdataprev
+        }
+
+        ]
+    },
+
+    // Configuration options go here
+    options: {
+        layout: {
+            padding: {
+                left: 10,
+                right: 20,
+                top: 0,
+                bottom: 0
+            }
+        }
+    }
+});
+
+
+} //close controller
 
 })();
 

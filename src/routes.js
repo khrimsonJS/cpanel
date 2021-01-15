@@ -76,10 +76,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     resolve: {
       items: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams) {
         return MenuDataService.getAndamentoRegionaleRegione($stateParams.regione);
-      }],
-      regione: ['$stateParams', function ($stateParams) {
-        return $stateParams.regione;
-    }]
+      }]
     }
   })
 
@@ -92,10 +89,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       items: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams) {
         //console.log(MenuDataService.getAndamentoRegionaleRegioneData("Abruzzo", $stateParams.data));
         return MenuDataService.getAndamentoRegionaleRegioneData($stateParams.regione, $stateParams.data );
-      }],
-      regione: ['$stateParams', function ($stateParams) {
-        return $stateParams.regione;
-    }]
+      }]
     }
   })
 

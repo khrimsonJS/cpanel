@@ -14,8 +14,9 @@ function FotografiaController(items) {
   	fotografia.mese = fotografia.items.data.slice(5,7);
   	fotografia.anno = fotografia.items.data.slice(0,4);
   	fotografia.datatrunc = 	fotografia.giorno.concat('/',fotografia.mese,'/', fotografia.anno);
+  	//fotografiareg.popolaz = 59641488;
 	// console.log("fotografia: ",fotografia.items);
-	// console.log("substr: ",fotografia.datatrunc);
+    //console.log("fotografia.items: ",fotografia.items);
 
 }
 

@@ -1,0 +1,107 @@
+regionipop = [
+  {
+    "Territorio": "Abruzzo",
+    "Codice_reg": 13,
+    "popolaz": 1293941
+  },
+  {
+    "Territorio": "Basilicata",
+    "Codice_reg": 17,
+    "popolaz": 553254
+  },
+  {
+    "Territorio": "Calabria",
+    "Codice_reg": 18,
+    "popolaz": 1894110
+  },
+  {
+    "Territorio": "Campania",
+    "Codice_reg": 15,
+    "popolaz": 5712143
+  },
+  {
+    "Territorio": "Emilia-Romagna",
+    "Codice_reg": 8,
+    "popolaz": 4464119
+  },
+  {
+    "Territorio": "Friuli Venezia Giulia",
+    "Codice_reg": 6,
+    "popolaz": 1206216
+  },
+  {
+    "Territorio": "Lazio",
+    "Codice_reg": 12,
+    "popolaz": 5755700
+  },
+  {
+    "Territorio": "Liguria",
+    "Codice_reg": 7,
+    "popolaz": 1524826
+  },
+  {
+    "Territorio": "Lombardia",
+    "Codice_reg": 3,
+    "popolaz": 10027602
+  },
+  {
+    "Territorio": "Marche",
+    "Codice_reg": 11,
+    "popolaz": 1512672
+  },
+  {
+    "Territorio": "Molise",
+    "Codice_reg": 14,
+    "popolaz": 300516
+  },
+  {
+    "Territorio": "Piemonte",
+    "Codice_reg": 1,
+    "popolaz": 4311217
+  },
+  {
+    "Territorio": "P.A. Bolzano",
+    "Codice_reg": 21,
+    "popolaz": 532644
+  },
+  {
+    "Territorio": "P.A. Trento",
+    "Codice_reg": 22,
+    "popolaz": 545425
+  },
+  {
+    "Territorio": "Puglia",
+    "Codice_reg": 16,
+    "popolaz": 3953305
+  },
+  {
+    "Territorio": "Sardegna",
+    "Codice_reg": 20,
+    "popolaz": 1611621
+  },
+  {
+    "Territorio": "Sicilia",
+    "Codice_reg": 19,
+    "popolaz": 4875290
+  },
+  {
+    "Territorio": "Toscana",
+    "Codice_reg": 9,
+    "popolaz": 3692555
+  },
+  {
+    "Territorio": "Umbria",
+    "Codice_reg": 10,
+    "popolaz": 870165
+  },
+  {
+    "Territorio": "Valle d'Aosta",
+    "Codice_reg": 2,
+    "popolaz": 125034
+  },
+  {
+    "Territorio": "Veneto",
+    "Codice_reg": 5,
+    "popolaz": 4879133
+  }
+]

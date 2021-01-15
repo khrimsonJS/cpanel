@@ -1,9 +1,15 @@
 <a ui-sref="home">Home</a> &lt; <a ui-sref="lista-regioni">Lista Regioni</a> &lt; <span>Andamento Regionale - Regione {{ regionale.denominazione_regione }}</span>
 
-<div><canvas id="myChart" width="600" height="200"></canvas></div>
+<div>
+	<h4>Positivi</h4>
+	<div><canvas id="myChart" width="600" height="200"></canvas></div>
+	<br/>
+	<h4>Indicatori</h4>
+	<div><canvas id="myChart2" width="600" height="200"></canvas></div>
+</div>
 
 
-<h3>Lista flussi regionali {{ regionale.denominazione_regione }} </h3>
+<h4>Lista flussi regionali {{ regionale.denominazione_regione }} </h4>
 <!-- <categories-list items="categories.items"></categories-list> -->
 <ul>
   <li ng-repeat="item in regionale.items">
