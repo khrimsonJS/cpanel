@@ -47,10 +47,10 @@ function HomeController(items, latest, tk) {
              d > 0.025      ? '#ae017e' :
              d > 0.01       ? '#dd3497' :
              d > 0.005      ? '#f768a1' :
-             d > 0.0025     ? '##fa9fb5' :
-             d > 0.001      ? '##fcc5c0' :
-             d > 0.0005     ? '##fde0dd' :
-                              '##fff7f3';
+             d > 0.0025     ? '#fa9fb5' :
+             d > 0.001      ? '#fcc5c0' :
+             d > 0.0005     ? '#fde0dd' :
+                              '#fff7f3';
     }
 
     function getColor4(d) {
