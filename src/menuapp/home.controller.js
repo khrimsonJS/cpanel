@@ -201,7 +201,7 @@ function HomeController(items, latest, tk) {
 
 
 function linkToView(e) {
-  window.open(home.basepath + "/andamento-regionale/" + e.sourceTarget.feature.properties.denominazione_regione);
+  window.location.href = home.basepath + "/andamento-regionale/" + e.sourceTarget.feature.properties.denominazione_regione;
   //console.log(home.basepath + "/index.html#/andamento-regionale/" + e.sourceTarget.feature.properties.denominazione_regione);
   //console.log(e.sourceTarget.feature.properties.denominazione_regione);
 }
