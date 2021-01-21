@@ -32,7 +32,7 @@ function AndamentoRegionaleController(items) {
 	regionale.denominazione_regione = regionale.items[0].denominazione_regione;
 	regionale.datatrunc = regionale.items[0].data.slice(8,10).concat('/',regionale.items[0].data.slice(5,7),'/',regionale.items[0].data.slice(0,4));
 
-	console.log('regionale:',regionale.items[0].denominazione_regione);
+	
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var chart = new Chart(ctx, {
 	    // The type of chart we want to create

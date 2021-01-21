@@ -20,6 +20,8 @@ function HomeController(items, latest, tk) {
     home.datatrunc = home.giorno.concat('/',home.mese,'/', home.anno);
     home.latest.popolaz = 59641488;
 
+    home.basepath = 'https://khrimsonjs.github.io/cpanel/#';
+
   function getColor(d) {
     return d > 2000  ? '#800026' :
            d > 1000  ? '#BD0026' :
@@ -197,31 +199,43 @@ function HomeController(items, latest, tk) {
       info4.update();
     }
 
+
+function linkToView(e) {
+  window.open(home.basepath + "/andamento-regionale/" + e.sourceTarget.feature.properties.denominazione_regione);
+  //console.log(home.basepath + "/index.html#/andamento-regionale/" + e.sourceTarget.feature.properties.denominazione_regione);
+  //console.log(e.sourceTarget.feature.properties.denominazione_regione);
+}
+
+
     function onEachFeature(feature, layer) {
         layer.on({
           mouseover: highlightFeature,
-          mouseout: resetHighlight
+          mouseout: resetHighlight,
+          click: linkToView
         });
     }
 
     function onEachFeature2(feature, layer) {
         layer.on({
           mouseover: highlightFeature2,
-          mouseout: resetHighlight2
+          mouseout: resetHighlight2,
+          click: linkToView
         });
     }
 
     function onEachFeature3(feature, layer) {
         layer.on({
           mouseover: highlightFeature3,
-          mouseout: resetHighlight3
+          mouseout: resetHighlight3,
+          click: linkToView
         });
     }
 
     function onEachFeature4(feature, layer) {
         layer.on({
           mouseover: highlightFeature4,
-          mouseout: resetHighlight4
+          mouseout: resetHighlight4,
+          click: linkToView
         });
     }
 
